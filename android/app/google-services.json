@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "513756598379",
+    "project_id": "walkmoment-36261",
+    "storage_bucket": "walkmoment-36261.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513756598379:android:20c46ed52992bbe0d9612e",
+        "android_client_info": {
+          "package_name": "com.example.walkmoment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513756598379-1n2d3mo5s0prbsv7bggujmh3u13tau1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTPiyjtjF6esq1Y3I789r3616sT7LrJ0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513756598379-1n2d3mo5s0prbsv7bggujmh3u13tau1i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "513756598379-894i84730kub5tesgmugb6cj0tfn6164.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.walkmoment.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
