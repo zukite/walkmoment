@@ -29,8 +29,18 @@ class MyDrawer extends StatelessWidget {
               ),
               // home list tile
               MyListTile(
-                icon: Icons.home,
-                text: "H O M E",
+                icon: Icons.park,
+                text: "W A L K",
+                onTap: () => Navigator.pop(context),
+              ),
+              MyListTile(
+                icon: Icons.restaurant,
+                text: "E A T",
+                onTap: () => Navigator.pop(context),
+              ),
+              MyListTile(
+                icon: Icons.menu_book,
+                text: "B O O K",
                 onTap: () => Navigator.pop(context),
               ),
               // profile list tile

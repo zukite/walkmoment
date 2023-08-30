@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
+import 'package:walkmoment/components/my_calendar.dart';
 import 'package:walkmoment/pages/profile_page.dart';
 
 import '../components/drawer.dart';
@@ -28,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ProfilePage(),
+        builder: (context) => const ProfilePage(),
       ),
     );
   }
@@ -46,15 +48,7 @@ class _HomePageState extends State<HomePage> {
         onProfileTap: goToProfilePage,
         onSignOut: signOut,
       ),
-      body: const Column(
-        children: [
-          // the wall
-
-          // post messate
-
-          // logged in as
-        ],
-      ),
+      // body: MyCalendar(),
     );
   }
 }
