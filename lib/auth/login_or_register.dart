@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:walkmoment/pages/login_page.dart';
+import 'package:walkmoment/pages/home_login_page.dart';
 import 'package:walkmoment/pages/register_page.dart';
 
 class LoginOrRegister extends StatefulWidget {

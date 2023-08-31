@@ -3,14 +3,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:walkmoment/components/text_box.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class MyProfilePage extends StatefulWidget {
+  const MyProfilePage({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<MyProfilePage> createState() => _MyProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _MyProfilePageState extends State<MyProfilePage> {
   // user
   final currentUser = FirebaseAuth.instance.currentUser!;
   // all user

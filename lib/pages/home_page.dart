@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import 'package:walkmoment/components/my_calendar.dart';
-import 'package:walkmoment/components/today_banner.dart';
-import 'package:walkmoment/pages/profile_page.dart';
-import 'package:walkmoment/pages/walk_page.dart';
-
+import 'package:walkmoment/components/text_button.dart';
+import 'package:walkmoment/pages/drawer_profile_page.dart';
 import '../components/drawer.dart';
+import 'drawer_book_page.dart';
+import 'drawer_meal_page.dart';
+import 'drawer_walk_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,11 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  DateTime selectedDate = DateTime.utc(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day,
-  );
   // user
   final currentUser = FirebaseAuth.instance.currentUser!;
   // sign user out
@@ -37,15 +31,48 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const ProfilePage(),
+        builder: (context) => const MyProfilePage(),
       ),
     );
   }
 
-  void onDaySelected(DateTime selectedDate, DateTime focusedDate) {
-    setState(() {
-      this.selectedDate = selectedDate;
-    });
+  void goToWalkPage() {
+// pop menu drawer
+    Navigator.pop(context);
+
+    // go to profile page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const MyWalkPage(),
+      ),
+    );
+  }
+
+  void goToMealPage() {
+    // pop menu drawer
+    Navigator.pop(context);
+
+    // go to profile page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const MyMealPage(),
+      ),
+    );
+  }
+
+  void goToBookPage() {
+    // pop menu drawer
+    Navigator.pop(context);
+
+    // go to profile page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const MyBookPage(),
+      ),
+    );
   }
 
   @override
@@ -53,56 +80,32 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: const Text("순간의 흔적"),
+        title: const Text("Time and Trace"),
         centerTitle: true,
         backgroundColor: Colors.grey[900],
       ),
       drawer: MyDrawer(
+        onWalkTap: goToWalkPage,
+        onMealTap: goToMealPage,
+        onBookTap: goToBookPage,
         onProfileTap: goToProfilePage,
         onSignOut: signOut,
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/walk');
-              },
-              child: Text(
-                "산책의 흔적",
-                style: TextStyle(
-                  color: Colors.grey[800],
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+            MyTextButton(
+              subjectText: "산책의 흔적",
+              connectName: '/walk',
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/meal');
-              },
-              child: Text(
-                "식사의 흔적",
-                style: TextStyle(
-                  color: Colors.grey[800],
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+            MyTextButton(
+              subjectText: "식사의 흔적",
+              connectName: '/meal',
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/book');
-              },
-              child: Text(
-                "독서의 흔적",
-                style: TextStyle(
-                  color: Colors.grey[800],
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+            MyTextButton(
+              subjectText: "독서의 흔적",
+              connectName: '/book',
             ),
           ],
         ),

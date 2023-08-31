@@ -23,25 +23,35 @@ class MyCalendar extends StatelessWidget {
       focusedDay: DateTime.now(),
       firstDay: DateTime(1950, 1, 1),
       lastDay: DateTime(3000, 1, 1),
+      // 달력 최상단 스타일
       headerStyle: const HeaderStyle(
+        // 제목 중앙에 위치
         titleCentered: true,
+        // 달력 크기 선택 옵션 없애기
         formatButtonVisible: false,
         titleTextStyle: TextStyle(
+          // 제목 글꼴
           fontWeight: FontWeight.w700,
           fontSize: 16.0,
         ),
       ),
+
       calendarStyle: CalendarStyle(
-        selectedDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6.0),
-          border: Border.all(
-            color: Colors.grey,
-            width: 1.0,
-          ),
+        isTodayHighlighted: true,
+        todayDecoration: BoxDecoration(
+          color: Colors.grey[500],
+          shape: BoxShape.circle,
         ),
-        selectedTextStyle: TextStyle(
-          fontWeight: FontWeight.w600,
+        todayTextStyle: const TextStyle(
+          color: Colors.black,
+        ),
+        selectedDecoration: BoxDecoration(
+          color: Colors.grey[700],
+          shape: BoxShape.circle,
+        ),
+        selectedTextStyle: const TextStyle(
           color: Colors.white,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

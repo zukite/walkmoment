@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:walkmoment/components/my_list_tile.dart';
 
 class MyDrawer extends StatelessWidget {
+  final void Function()? onWalkTap;
+  final void Function()? onMealTap;
+  final void Function()? onBookTap;
   final void Function()? onProfileTap;
   final void Function()? onSignOut;
   const MyDrawer({
     super.key,
+    required this.onWalkTap,
+    required this.onMealTap,
+    required this.onBookTap,
     required this.onProfileTap,
     required this.onSignOut,
   });
@@ -31,17 +37,17 @@ class MyDrawer extends StatelessWidget {
               MyListTile(
                 icon: Icons.park,
                 text: "W A L K",
-                onTap: () => Navigator.pop(context),
+                onTap: onWalkTap,
               ),
               MyListTile(
                 icon: Icons.restaurant,
-                text: "E A T",
-                onTap: () => Navigator.pop(context),
+                text: "M E A L",
+                onTap: onMealTap,
               ),
               MyListTile(
                 icon: Icons.menu_book,
                 text: "B O O K",
-                onTap: () => Navigator.pop(context),
+                onTap: onBookTap,
               ),
               // profile list tile
               MyListTile(

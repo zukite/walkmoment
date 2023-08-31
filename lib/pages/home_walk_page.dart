@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../components/my_calendar.dart';
+import '../components/calendar.dart';
+import '../components/diary_card.dart';
 import '../components/today_banner.dart';
 
-class MyWalkPage extends StatefulWidget {
-  const MyWalkPage({super.key});
+class WalkPage extends StatefulWidget {
+  const WalkPage({super.key});
 
   @override
-  State<MyWalkPage> createState() => _MyWalkPageState();
+  State<WalkPage> createState() => _WalkPageState();
 }
 
-class _MyWalkPageState extends State<MyWalkPage> {
+class _WalkPageState extends State<WalkPage> {
   DateTime selectedDate = DateTime.utc(
     DateTime.now().year,
     DateTime.now().month,
@@ -28,7 +29,7 @@ class _MyWalkPageState extends State<MyWalkPage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: Text("산책의 흔적"),
+        title: const Text("산책의 흔적"),
         centerTitle: true,
         backgroundColor: Colors.grey[900],
       ),
@@ -38,17 +39,19 @@ class _MyWalkPageState extends State<MyWalkPage> {
             onDaySelected: onDaySelected,
             selectedDate: selectedDate,
           ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           TodayBanner(
             selectedDate: selectedDate,
             count: 0,
           ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
-          // ScheduleCard(),
+          DiaryCard(
+            content: "이러이러이ㅓ리어리얼이ㅓㅓㅇ",
+          ),
         ],
       ),
     );
