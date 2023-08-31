@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/date_time_patterns.dart';
+
 import 'package:table_calendar/table_calendar.dart';
 
 class MyCalendar extends StatelessWidget {

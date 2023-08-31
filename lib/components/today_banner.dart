@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class TodayBanner extends StatelessWidget {
@@ -13,10 +11,10 @@ class TodayBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(
-      fontWeight: FontWeight.w600,
-      color: Colors.white,
-    );
+    // final textStyle = TextStyle(
+    //   fontWeight: FontWeight.w600,
+    //   color: Colors.white,
+    // );
     return Container(
       color: Colors.grey[400],
       child: Padding(

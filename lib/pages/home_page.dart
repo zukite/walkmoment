@@ -1,11 +1,10 @@
-import 'dart:ffi';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
+
 import 'package:walkmoment/components/my_calendar.dart';
 import 'package:walkmoment/components/today_banner.dart';
 import 'package:walkmoment/pages/profile_page.dart';
+import 'package:walkmoment/pages/walk_page.dart';
 
 import '../components/drawer.dart';
 
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: const Text("순간의 기록"),
+        title: const Text("순간의 흔적"),
         centerTitle: true,
         backgroundColor: Colors.grey[900],
       ),
@@ -62,24 +61,51 @@ class _HomePageState extends State<HomePage> {
         onProfileTap: goToProfilePage,
         onSignOut: signOut,
       ),
-      body: Column(
-        children: [
-          MyCalendar(
-            onDaySelected: onDaySelected,
-            selectedDate: selectedDate,
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          TodayBanner(
-            selectedDate: selectedDate,
-            count: 0,
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          ScheduleCard(),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/walk');
+              },
+              child: Text(
+                "산책의 흔적",
+                style: TextStyle(
+                  color: Colors.grey[800],
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/meal');
+              },
+              child: Text(
+                "식사의 흔적",
+                style: TextStyle(
+                  color: Colors.grey[800],
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/book');
+              },
+              child: Text(
+                "독서의 흔적",
+                style: TextStyle(
+                  color: Colors.grey[800],
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
