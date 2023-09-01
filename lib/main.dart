@@ -34,10 +34,12 @@ import 'package:walkmoment/firebase_options.dart';
 import 'package:walkmoment/pages/home_book_page.dart';
 import 'package:walkmoment/pages/home_meal_page.dart';
 import 'package:walkmoment/pages/home_walk_page.dart';
+// import 'package:intl/date_symsbol_data_local.dart';
 
 void main() async {
   // 데이터베이스 초기화
   WidgetsFlutterBinding.ensureInitialized();
+  // await initializeDateFormatting();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

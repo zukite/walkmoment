@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:walkmoment/components/walk_card.dart';
+import 'package:walkmoment/components/walk_input_sheet.dart';
 
 import '../components/calendar.dart';
-import '../components/diary_card.dart';
+
 import '../components/today_banner.dart';
 
 class WalkPage extends StatefulWidget {
@@ -32,27 +34,39 @@ class _WalkPageState extends State<WalkPage> {
         title: const Text("산책의 흔적"),
         centerTitle: true,
         backgroundColor: Colors.grey[900],
-      ),
-      body: Column(
-        children: [
-          MyCalendar(
-            onDaySelected: onDaySelected,
-            selectedDate: selectedDate,
-          ),
-          const SizedBox(
-            height: 8.0,
-          ),
-          TodayBanner(
-            selectedDate: selectedDate,
-            count: 0,
-          ),
-          const SizedBox(
-            height: 8.0,
-          ),
-          DiaryCard(
-            content: "이러이러이ㅓ리어리얼이ㅓㅓㅇ",
+        actions: [
+          IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                  isDismissible: true,
+                  context: context,
+                  builder: (_) => MyDiaryInputSheet());
+            },
+            icon: Icon(Icons.add),
           ),
         ],
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            MyCalendar(
+              onDaySelected: onDaySelected,
+              selectedDate: selectedDate,
+            ),
+            const SizedBox(
+              height: 8.0,
+            ),
+            MyTodayBanner(
+              selectedDate: selectedDate,
+            ),
+            const SizedBox(
+              height: 8.0,
+            ),
+            WalkCard(
+              content: "이러이러이ㅓ리어리얼이ㅓㅓㅇ",
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,36 +1,48 @@
 import 'package:flutter/material.dart';
 
-class TodayBanner extends StatelessWidget {
+class MyTodayBanner extends StatelessWidget {
   final DateTime selectedDate;
-  final int count;
-  const TodayBanner({
-    super.key,
+
+  const MyTodayBanner({
+    Key? key,
     required this.selectedDate,
-    required this.count,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // final textStyle = TextStyle(
+    //   fontSize: 16.0,
     //   fontWeight: FontWeight.w600,
-    //   color: Colors.white,
+    //   color: Colors.grey[700],
     // );
-    return Container(
-      color: Colors.grey[400],
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 16.0,
-          vertical: 8.0,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          height: 1.3,
+          width: 230.0,
+          color: Colors.grey[500],
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              "${selectedDate.year}. ${selectedDate.month}. ${selectedDate.day}.",
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16.0,
+            vertical: 8.0,
+          ),
+          child: Text(
+            '${selectedDate.year}. ${selectedDate.month}. ${selectedDate.day}.',
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w600,
+              color: Colors.grey[700],
             ),
-          ],
+          ),
         ),
-      ),
+        Container(
+          height: 1.3,
+          width: 30.0,
+          color: Colors.grey[500],
+        ),
+      ],
     );
   }
 }

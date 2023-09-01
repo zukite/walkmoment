@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class DiaryCard extends StatelessWidget {
+class WalkCard extends StatelessWidget {
   final String content;
 
-  const DiaryCard({
+  const WalkCard({
     required this.content,
     super.key,
   });
