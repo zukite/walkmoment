@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walkmoment/components/walk_card.dart';
-import 'package:walkmoment/components/walk_input_sheet.dart';
-
 import '../components/calendar.dart';
-
 import '../components/today_banner.dart';
 
 class WalkPage extends StatefulWidget {
@@ -36,13 +33,8 @@ class _WalkPageState extends State<WalkPage> {
         backgroundColor: Colors.grey[900],
         actions: [
           IconButton(
-            onPressed: () {
-              showModalBottomSheet(
-                  isDismissible: true,
-                  context: context,
-                  builder: (_) => MyDiaryInputSheet());
-            },
-            icon: Icon(Icons.add),
+            onPressed: () {},
+            icon: const Icon(Icons.add),
           ),
         ],
       ),
@@ -62,7 +54,7 @@ class _WalkPageState extends State<WalkPage> {
             const SizedBox(
               height: 8.0,
             ),
-            WalkCard(
+            const WalkCard(
               content: "이러이러이ㅓ리어리얼이ㅓㅓㅇ",
             ),
           ],
