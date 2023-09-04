@@ -25,6 +25,7 @@ class MyCalendar extends StatelessWidget {
       lastDay: DateTime(3000, 1, 1),
       // 달력 최상단 스타일
       headerStyle: const HeaderStyle(
+        headerPadding: EdgeInsets.only(bottom: 20),
         // 제목 중앙에 위치
         titleCentered: true,
         // 달력 크기 선택 옵션 없애기
@@ -42,12 +43,13 @@ class MyCalendar extends StatelessWidget {
           color: Colors.grey[500],
           shape: BoxShape.circle,
         ),
-        todayTextStyle: const TextStyle(
-          color: Colors.black,
-        ),
+        // weekNumberTextStyle: TextStyle(),
         selectedDecoration: BoxDecoration(
           color: Colors.grey[700],
           shape: BoxShape.circle,
+        ),
+        todayTextStyle: const TextStyle(
+          color: Colors.black,
         ),
         selectedTextStyle: const TextStyle(
           color: Colors.white,
