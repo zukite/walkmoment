@@ -19,7 +19,7 @@ class MyTextButton extends StatelessWidget {
         subjectText,
         style: TextStyle(
           color: Colors.grey[800],
-          fontSize: 16.0,
+          fontSize: 14.0,
           fontWeight: FontWeight.w500,
         ),
       ),

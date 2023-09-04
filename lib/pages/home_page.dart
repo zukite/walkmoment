@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:walkmoment/components/calendar.dart';
 // import 'package:walkmoment/components/navigation.dart';
-import 'package:walkmoment/components/today_banner.dart';
+// import 'package:walkmoment/components/today_banner.dart';
 // import 'package:walkmoment/components/text_button.dart';
 import 'package:walkmoment/pages/drawer_profile_page.dart';
 import '../components/drawer.dart';
@@ -50,18 +50,18 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-//   void goToWalkPage() {
-// // pop menu drawer
-//     Navigator.pop(context);
+  void goToWalkPage() {
+// pop menu drawer
+    Navigator.pop(context);
 
-//     // go to profile page
-//     Navigator.push(
-//       context,
-//       MaterialPageRoute(
-//         builder: (context) => const MyWalkPage(),
-//       ),
-//     );
-//   }
+    // go to profile page
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const WalkPage(),
+      ),
+    );
+  }
 
   void goToMealPage() {
     // pop menu drawer
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const MyMealPage(),
+        builder: (context) => const MealPage(),
       ),
     );
   }
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const MyBookPage(),
+        builder: (context) => const BookPage(),
       ),
     );
   }
@@ -102,8 +102,7 @@ class _HomePageState extends State<HomePage> {
       ),
 
       drawer: MyDrawer(
-        // onWalkTap: goToWalkPage,
-        onWalkTap: '/walk',
+        onWalkTap: goToWalkPage,
         onMealTap: goToMealPage,
         onBookTap: goToBookPage,
         onProfileTap: goToProfilePage,
@@ -132,9 +131,30 @@ class _HomePageState extends State<HomePage> {
       // ),
       // body: MyNavigation(),
       // body: MyTodayBanner(selectedDate: selectedDate),
-      body: MyCalendar(
-        onDaySelected: onDaySelected,
-        selectedDate: selectedDate,
+      body: SafeArea(
+        child: Column(
+          children: [
+            MyCalendar(
+              onDaySelected: onDaySelected,
+              selectedDate: selectedDate,
+            ),
+            // const SizedBox(
+            //   height: 8.0,
+            // ),
+            // const MyTextButton(
+            //   subjectText: "산책 기록",
+            //   connectName: '/walk',
+            // ),
+            // const MyTextButton(
+            //   subjectText: "식사 기록",
+            //   connectName: '/meal',
+            // ),
+            // const MyTextButton(
+            //   subjectText: "독서 기록",
+            //   connectName: '/book',
+            // ),
+          ],
+        ),
       ),
     );
   }

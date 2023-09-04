@@ -2,9 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:walkmoment/auth/auth.dart';
 import 'package:walkmoment/firebase_options.dart';
-import 'package:walkmoment/pages/home_book_page.dart';
-import 'package:walkmoment/pages/home_meal_page.dart';
-import 'package:walkmoment/pages/home_walk_page.dart';
+import 'package:walkmoment/pages/drawer_book_page.dart';
+import 'package:walkmoment/pages/drawer_meal_page.dart';
+import 'package:walkmoment/pages/drawer_walk_page.dart';
+// import 'package:walkmoment/pages/home_book_page.dart';
+// import 'package:walkmoment/pages/home_meal_page.dart';
+// import 'package:walkmoment/pages/home_walk_page.dart';
 
 void main() async {
   // 데이터베이스 초기화

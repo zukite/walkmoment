@@ -1,19 +1,21 @@
+//
 import 'package:flutter/material.dart';
 
-class MyMealPage extends StatefulWidget {
-  const MyMealPage({super.key});
+class MealPage extends StatefulWidget {
+  const MealPage({super.key});
 
   @override
-  State<MyMealPage> createState() => _MyMealPageState();
+  State<MealPage> createState() => _MealPageState();
 }
 
-class _MyMealPageState extends State<MyMealPage> {
+class _MealPageState extends State<MealPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: const Text("Meal Page"),
+        title: const Text("M E A L"),
+        centerTitle: true,
         backgroundColor: Colors.grey[900],
       ),
     );
