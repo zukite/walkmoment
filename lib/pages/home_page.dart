@@ -5,6 +5,7 @@ import 'package:walkmoment/components/calendar.dart';
 // import 'package:walkmoment/components/today_banner.dart';
 // import 'package:walkmoment/components/text_button.dart';
 import 'package:walkmoment/pages/drawer_profile_page.dart';
+import 'package:walkmoment/pages/walk_add.dart';
 import '../components/drawer.dart';
 import 'drawer_book_page.dart';
 import 'drawer_meal_page.dart';
@@ -135,6 +136,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             MyCalendar(
+              //calendar.dart
               onDaySelected: onDaySelected,
               selectedDate: selectedDate,
             ),
@@ -155,6 +157,21 @@ class _HomePageState extends State<HomePage> {
             // ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.grey[600],
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (cotext) => AddPage(
+                      selectedDate: selectedDate,
+                    )
+                // selectedDate: selectedDate,
+
+                ), // walk_add.dart
+          );
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
