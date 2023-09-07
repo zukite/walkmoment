@@ -33,22 +33,23 @@ class MyDrawer extends StatelessWidget {
                   size: 64,
                 ),
               ),
-              // home list tile
               MyListTile(
-                icon: Icons.park,
-                text: "W A L K",
-                onTap: onWalkTap,
+                icon: Icons.checkroom,
+                text: "C L O T H E S",
+                onTap: onMealTap,
               ),
               MyListTile(
                 icon: Icons.restaurant,
                 text: "M E A L",
-                onTap: onMealTap,
-              ),
-              MyListTile(
-                icon: Icons.menu_book,
-                text: "B O O K",
                 onTap: onBookTap,
               ),
+              // home list tile
+              MyListTile(
+                icon: Icons.cloud,
+                text: "C L O U D",
+                onTap: onWalkTap,
+              ),
+
               // profile list tile
               MyListTile(
                 icon: Icons.person,
